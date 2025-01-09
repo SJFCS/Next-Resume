@@ -1,0 +1,75 @@
+metadata:
+  name: 张三
+  age: 20
+  phone: "+86 123 4567 8900"
+  email: zhangsan@example.com
+  photo: https://images.unsplash.com/photo-1516116216624-53e697fedbea
+  github: ZhangSan
+  blog: https://example.com/
+# 都可以用变量替换
+
+sections:
+  - title: 教育背景
+    experience:
+      - title: 银河大学
+        subtitle: 信息科学与工程学院
+        description: <i class="ti ti-users"></i>计算机科学与技术专业，本科
+        date: 2024 年 12 月 - 2025 年 12 月
+        items:
+          - <b>主修课程：</b>程序设计、算法与数据结构等
+          - <b>学业成绩：</b>GPA 3.71/4.00，专业排名 31%
+  - title: 工作经历
+    experience:
+      - title: 太阳系集团 - 地球信息技术有限公司
+        subtitle: 自然环境工程师
+        date: 2024 年 12 月 - 2025 年 12 月
+        description: |
+          基于机器学习的数据分析平台，
+          支持实时数据处理和可视化展示，
+          帮助客户提升决策效率。
+        items:
+          - <b>主要成绩:<b>
+          - - <i class="ti ti-users"></i>参与智能应用开发。
+          - - 基于 Babel 等工具，优化集成构建流程，
+              沉淀相关文档形成标准。
+  - title: 项目经验
+    experience:
+      - title: 人工智能平台
+        subtitle: AI工程师
+        date: 2024 年 12 月 - 2025 年 12 月
+        url: https://example.com/
+        image: /images/local.png
+        description: |
+          基于机器学习的数据分析平台，
+          支持实时数据处理和可视化展示，
+          帮助客户提升决策效率。
+        items:
+          - <b>主要成绩:<b>
+          - - 基于WebSocket实现了实时数据更新
+          - - <i class="ti ti-users"></i> 支持自定义数据源和分析规则,
+              添加 i18n 国际化支持。调用 AI 模型生成各语言的翻译文案。
+  - title: 校园经历
+    experience:
+      - title: 大学信息安全协会
+        subtitle: 会长
+        date: 2023 年 9 月 - 至今
+      - title: 大学工程学院辩论队
+        subtitle: 队长
+        date: 2022 年 7 月 - 2023 年 7 月
+  - title: 证书列表
+    experience:
+      - title: 证书1（错误的图片展示加载占位符）
+        image: /images/loading.png
+        url: https://example.com
+        date: 2023 年 9 月
+      - title: 证书1（本地图片）
+        image: /images/local.png
+        url: https://example.com
+        date: 2023 年 9 月
+      - title: 证书3（网络图片）
+        image: https://images.unsplash.com/photo-1516116216624-53e697fedbea
+        url: https://example.com
+        date: 2023 年 9 月
+  - title:
+    description: |
+      <div style="text-align: center; color: #666666; font-size: 12px;">感谢您阅读我的简历，期待与您一起共事。</div>

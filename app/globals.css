@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 25%;
+    --ring: 0 0% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Grid background */
+.grid-background {
+  background-size: 50px 50px;
+  background-image: linear-gradient(
+      to right,
+      rgba(var(--grid-rgb), 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(var(--grid-rgb), 0.05) 1px, transparent 1px);
+}
+/* 加强小屏黑暗模式下的网格 */
+@media (max-width: 640px) {
+  .dark .grid-background {
+    background-image: linear-gradient(
+        to right,
+        rgba(var(--grid-rgb), 0.1) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(var(--grid-rgb), 0.1) 1px,
+        transparent 1px
+      );
+  }
+}
+
+/* Glass card effect */
+.glass-card {
+  background: rgba(var(--card-rgb), 0.85);
+  backdrop-filter: blur(12px);
+}
+
+.dark .glass-card {
+  background: rgba(var(--card-rgb), 0.8);
+}
+
+/* 输入框样式 */
+input {
+  border-width: 2px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:focus-visible {
+  border-color: hsl(var(--primary)) !important;
+  background-color: color-mix(in srgb, hsl(var(--primary)) 2%, transparent);
+  outline: none !important;
+}
+
+.dark input {
+  border-width: 2px !important;
+}
+
+.dark input:focus-visible {
+  border-color: hsl(var(--primary)) !important;
+  background-color: color-mix(in srgb, hsl(var(--primary)) 4%, transparent);
+}
+
+/* Print styles */
+@page {
+  size: auto;
+  margin: 0mm;
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    margin: 1.6cm;
+  }
+
+  .grid-background {
+    background: none !important;
+  }
+
+  .glass-card {
+    background: white !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+  }
+
+  /* 隐藏按钮 */
+  button[class*="fixed"] {
+    display: none !important;
+  }
+
+  /* 强制所有文本为黑色 */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  div,
+  li {
+    color: black !important;
+  }
+
+  /* 次要文本使用深灰色 */
+  .text-muted-foreground,
+  [class*="text-muted"] {
+    color: #444444 !important;
+  }
+
+  /* 链接样式 */
+  a {
+    text-decoration: none !important;
+    color: black !important;
+  }
+
+  /* 列表项前的圆点颜色 */
+  li::before {
+    background-color: black !important;
+    border-color: black !important;
+  }
+
+  /* 确保所有边框为黑色 */
+  * {
+    border-color: black !important;
+  }
+
+  /* .no-print {
+    display: none !important;
+  } */
+}
